@@ -8,8 +8,8 @@ export default function PrivateRoute({children}) {
     const {user, loading} = UseAuth()
     if(loading){
         return (
-            <div classname='flex justify-center items-center h-screen'>
-                <span classname="loading loading-ring loading-lg "></span>
+            <div className='flex justify-center items-center h-screen'>
+                <span className="loading loading-ring loading-lg "></span>
             </div>
         )
     }

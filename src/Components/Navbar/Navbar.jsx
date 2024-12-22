@@ -16,6 +16,7 @@ export default function Navbar() {
     }
     const links = <>
     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/">Home</NavLink>
+    <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/all-books">All Books</NavLink>
    
    
     </>
@@ -43,7 +44,7 @@ export default function Navbar() {
          {links}
         </ul>
       </div>
-      <img className='w-20 rounded-full' src={logo} alt="" />
+      <img className='w-20 rounded-full h-20' src={logo} alt="" />
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
@@ -54,7 +55,7 @@ export default function Navbar() {
      {
         user && user? <div className='flex justify-center items-center group relative'>
            <img className='w-16 rounded-full mr-4 ' src={user?.photoURL} alt="" />
-            <div className='bg-gray-800 p-5 rounded-xl hidden absolute group-hover:block top-16 z-20'>
+            <div className='bg-gray-800 p-5 rounded-xl hidden absolute group-hover:block top-12 z-20'>
               <p className='text-white mb-2 text-lg'>{user?.displayName}</p>
             <button className='btn text-purple-500 text-lg' onClick={handleLogout}>Logout</button>
             </div>

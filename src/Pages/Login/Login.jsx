@@ -1,9 +1,10 @@
-// import Lottie from "lottie-react";
-// import LoginJson from "./login.json"
+import Lottie from "lottie-react";
+import LoginJson from "./LoginJson.json"
 import React from 'react';
 import UseAuth from "../../Components/UseAuth/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+
+import {  toast, ToastContainer } from "react-toastify";
 export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -46,9 +47,9 @@ export default function Login() {
     }
   return (
     <div className="md:flex items-center justify-center flex-row-reverse ">
-        <Toaster></Toaster>
+        <ToastContainer></ToastContainer>
        <div className="flex-1">
-       {/* <Lottie animationData={LoginJson}></Lottie> */}
+       <Lottie animationData={LoginJson}></Lottie>
         </div>
        <form onSubmit={handleLogin} className="card-body flex-1">
         <div>

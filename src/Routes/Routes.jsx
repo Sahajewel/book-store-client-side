@@ -9,6 +9,10 @@ import Register from "../Pages/Register/Register"
 import CategoryCard from "../Components/CategoryCard/CategoryCard";
 import Books from "../Components/Books/Books";
 import CategoryPage from "../Components/Categories/Categories";
+import BookDetails from "../Components/BookDetails/BookDetails";
+import PrivateRoute from "./PrivateRoute";
+import AllBooks from "../Components/AllBooks/AllBooks";
+import UpdateForm from "../Components/UpdateForm/UpdateForm";
 
 // import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
@@ -28,9 +32,23 @@ export const router = createBrowserRouter([
          
         },
         {
+          path: "/update/:id",
+          element:<UpdateForm></UpdateForm>,
+          loader: ({params})=>fetch(`http://localhost:5000/book-details/${params.id}`)
+        },
+        {
           path: "/category",
           element: <CategoryCard></CategoryCard>,
           // loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.ca}`)
+        },
+        {
+            path: "/book-details/:id",
+            element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
+            loader: ({params})=>fetch(`http://localhost:5000/book-details/${params.id}`)
+        },
+        {
+          path: "/all-books",
+          element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
         },
         {
             path:"/login",
