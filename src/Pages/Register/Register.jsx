@@ -5,7 +5,7 @@ import UseAuth from "../../Components/UseAuth/UseAuth";
 
 import {  toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import "../../Styles/Styles.css"
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 export default function Register() {
