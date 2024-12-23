@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 // import ReactStars from 'react-rating-stars-component';
-import { Link, useParams } from 'react-router-dom';
+import { data, Link, useParams } from 'react-router-dom';
 
 
 export default function AllBooks() {
@@ -9,10 +10,15 @@ export default function AllBooks() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-      fetch(`http://localhost:5000/book-categories?category=${category}`)
-          .then((response) => response.json())
-          .then((data) => setBooks(data))
-          .catch((error) => console.error('Error fetching books:', error));
+    //   fetch(`http://localhost:5000/book-categories?category=${category}`)
+    //       .then((response) => response.json())
+    //       .then((data) => setBooks(data))
+    //       .catch((error) => console.error('Error fetching books:', error));
+
+          axios.get(`http://localhost:5000/book-categories?category=${category}`,{
+            withCredentials:true
+          })
+          .then((data)=>setBooks(data.data))
   }, [category]);
 
   return (

@@ -6,6 +6,7 @@ export default function BorrowCard({borrow}) {
         <Helmet>
             <title>Borrowed-Books</title>
         </Helmet>
+        
       <img className='w-40 h-52 mx-auto' src={borrow.image} alt="" />
       <p className='py-3'>Book Name: {borrow.bookName}</p>
       <p>Category: {borrow.category}</p>
