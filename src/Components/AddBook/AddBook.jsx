@@ -24,7 +24,7 @@ export default function AddBook() {
        
     }
   return (
-    <div>
+    <div className='pb-20'>
          <Helmet>
             <title>Add-Book</title>
         </Helmet>
@@ -88,7 +88,7 @@ export default function AddBook() {
           <textarea name='content' className="textarea textarea-primary" placeholder="Wright about Book Content"></textarea>
         </div>
        
-        <div className="form-control mt-6 ">
+        <div className="form-control mt-6">
      
        <button type='submit'  className="btn btn-primary">Add Book</button>
         </div>

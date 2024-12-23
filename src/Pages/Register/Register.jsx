@@ -7,6 +7,7 @@ import {  toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "../../Styles/Styles.css"
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 export default function Register() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -84,6 +85,9 @@ export default function Register() {
   return (
 
      <div className="md:flex items-center justify-center flex-row-reverse text-black">
+       <Helmet>
+            <title>Register</title>
+        </Helmet>
         <ToastContainer></ToastContainer>
        <div className="flex-1">
        <Lottie animationData={RegisterJson}></Lottie>

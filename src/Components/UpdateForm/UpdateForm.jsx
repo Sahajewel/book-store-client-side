@@ -42,7 +42,7 @@ export default function UpdateForm() {
     const navigate= useNavigate()
 
   return (
-    <div>
+    <div className='pb-20'>
        <Helmet>
             <title>All-books | Update</title>
         </Helmet>

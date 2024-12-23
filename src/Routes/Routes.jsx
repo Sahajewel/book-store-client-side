@@ -15,6 +15,8 @@ import AllBooks from "../Components/AllBooks/AllBooks";
 import UpdateForm from "../Components/UpdateForm/UpdateForm";
 import AddBook from "../Components/AddBook/AddBook";
 import BorrowedBook from "../Components/BorrowedBook/BorrowedBook";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 // import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
@@ -68,6 +70,14 @@ export const router = createBrowserRouter([
       {
           path: "/borrowed-books",
           element: <PrivateRoute><BorrowedBook></BorrowedBook></PrivateRoute>
+      },
+      {
+          path:"/aboutUs",
+          element:<AboutUs></AboutUs>
+      },
+      {
+        path: "/contactUs",
+        element:<ContactUs></ContactUs>
       },
 
         {

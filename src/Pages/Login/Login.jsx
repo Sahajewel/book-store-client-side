@@ -5,6 +5,7 @@ import UseAuth from "../../Components/UseAuth/UseAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {  toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet";
 export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -47,6 +48,9 @@ export default function Login() {
     }
   return (
     <div className="md:flex items-center justify-center flex-row-reverse ">
+       <Helmet>
+            <title>Login</title>
+        </Helmet>
         <ToastContainer></ToastContainer>
        <div className="flex-1">
        <Lottie animationData={LoginJson}></Lottie>
