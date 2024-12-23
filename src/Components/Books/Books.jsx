@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 // import ReactStars from 'react-rating-stars-component';
 import { Link, useParams } from 'react-router-dom';
 
@@ -15,7 +16,10 @@ const Books = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">All Books</h1>
+              <Helmet>
+            <title>Home | all-categories</title>
+        </Helmet>
+            <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white"> Books</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {books.map((book) => (
                     <div key={book.id} className="bg-white shadow-md rounded-lg p-4">

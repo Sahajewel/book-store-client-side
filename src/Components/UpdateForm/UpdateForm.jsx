@@ -1,11 +1,13 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom'
-
+import Swal from 'sweetalert2'
 export default function UpdateForm() {
     const {id} = useParams()
  console.log(id)
-    const form1 = useLoaderData()
-    console.log(form1)
+ const form1 = useLoaderData()
+    const {image,name, author_name, category,rating}= form1 
+   
     const handleUpdate =(e)=>{
         e.preventDefault()
         const form = e.target
@@ -27,6 +29,13 @@ export default function UpdateForm() {
        .then((res)=>res.json())
        .then((data)=>{
         console.log(data)
+         Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Book Updated",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
        })
     }
 
@@ -34,36 +43,40 @@ export default function UpdateForm() {
 
   return (
     <div>
-      <form onSubmit={handleUpdate} className="card-body">
+       <Helmet>
+            <title>All-books | Update</title>
+        </Helmet>
+       <h1 className='text-center text-white font-bold text-4xl py-10'>Update  Book</h1>
+      <form onSubmit={handleUpdate} className="card-body max-w-[800px] mx-auto bg-gray-600 p-20  rounded-tl-[100px]">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Image</span>
+            <span className="label-text text-lg text-white">Image</span>
           </label>
-          <input name='image'  type="text" placeholder="Image URL" className="input input-bordered" required />
+          <input defaultValue={image} name='image'  type="text" placeholder="Image URL" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text text-lg text-white">Name</span>
           </label>
-          <input name='name'  type="text" placeholder="name" className="input input-bordered" required />
+          <input defaultValue={name} name='name'  type="text" placeholder="name" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Author Name</span>
+            <span className="label-text text-lg text-white">Author Name</span>
           </label>
-          <input name='authorName'  type="text" placeholder="Author Name" className="input input-bordered" required />
+          <input defaultValue={author_name} name='authorName'  type="text" placeholder="Author Name" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Category</span>
+            <span className="label-text text-lg text-white">Category</span>
           </label>
-          <input name='category'  type="text" placeholder="Category" className="input input-bordered" required />
+          <input defaultValue={category} name='category'  type="text" placeholder="Category" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Rating</span>
+            <span className="label-text text-lg text-white">Rating</span>
           </label>
-          <input name='rating'  type="text" placeholder="Rating" className="input input-bordered" required />
+          <input defaultValue={rating} name='rating'  type="text" placeholder="Rating" className="input input-bordered" required />
         </div>
        
       

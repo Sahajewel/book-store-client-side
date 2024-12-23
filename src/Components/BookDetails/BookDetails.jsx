@@ -1,26 +1,37 @@
 import React from 'react'
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom'
 import UseAuth from '../UseAuth/UseAuth'
+import axios from 'axios'
+import { Helmet } from 'react-helmet'
 
 export default function BookDetails() {
 const navigate= useNavigate()
 const {user} = UseAuth()
    const details = useLoaderData()
-const handleDecrease=()=>{
-    
-    return (details.quantity)-1
-}
+
    const handleSubmitForm=(e)=>{
         e.preventDefault();
         const form = e.target;
         const name = form.name.value
         const email = form.email.value
-        const date = form.date.value
+        const borrowDate = form.borrowDate.value
+        const returnDate = form.returnDate.value
+        const image =details.image
+        const category =details.category
+        const bookName = details.name
        
+        const result ={name,email,borrowDate,returnDate,image,category,bookName}
+       axios.post("http://localhost:5000/borrowed",result)
+       .then((res)=>{
+        console.log(res.data)
+       })
         
    }
   return (
     <div className='flex items-center py-10 justify-center min-h-[calc(100vh-265px)] '>
+       <Helmet>
+            <title>Book-Details</title>
+        </Helmet>
      <div className='bg-gray-400 p-10 rounded-tr-[100px]'>
          <img className='mx-auto w-60' src={details.image} alt="" />
          <p className='text-xl text-white py-2'>Author: {details.name}</p>
@@ -50,13 +61,19 @@ const handleDecrease=()=>{
         </div>
         <div className="form-control">
           <label className="label">
+            <span className="label-text">Borrow Date</span>
+          </label>
+          <input name='borrowDate'  type="date" placeholder="Borrow Date" className="input input-bordered" required />
+        </div>
+        <div className="form-control">
+          <label className="label">
             <span className="label-text">Returning Date</span>
           </label>
-          <input name='date'  type="date" placeholder="Returning Date" className="input input-bordered" required />
+          <input name='returnDate'  type="date" placeholder="Returning Date" className="input input-bordered" required />
         </div>
       
         <div className="form-control mt-6 ">
-          <button onClick={handleDecrease}  className="btn btn-primary">Submit</button>
+          <button   className="btn btn-primary">Submit</button>
         </div>
       </form>
     <div className="modal-action">

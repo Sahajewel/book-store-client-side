@@ -17,6 +17,8 @@ export default function Navbar() {
     const links = <>
     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/">Home</NavLink>
     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/all-books">All Books</NavLink>
+    <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/add-book">Add Book</NavLink>
+    <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/borrowed-books">Borrowed Books</NavLink>
    
    
     </>
