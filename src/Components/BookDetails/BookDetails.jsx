@@ -9,7 +9,7 @@ const navigate= useNavigate()
 const {user} = UseAuth()
    const details = useLoaderData()
 
-   const handleSubmitForm=(e)=>{
+   const handleSubmitForm=(e)=>{  
         e.preventDefault();
         const form = e.target;
         const name = form.name.value
@@ -19,14 +19,24 @@ const {user} = UseAuth()
         const image =details.image
         const category =details.category
         const bookName = details.name
-       
+       form.reset()
         const result ={name,email,borrowDate,returnDate,image,category,bookName}
        axios.post("http://localhost:5000/borrowed",result)
        .then((res)=>{
         console.log(res.data)
        })
+      //  axios.patch(`http://localhost:5000/book-details/${details._id}`)
+      //  .then((res)=>{
+      //   console.log(res.data)
+       
+      //  })
+     
+
         
    }
+  //  const handleBorrow =(id)=>{
+  //   return details.quantity - 1
+  // }
   return (
     <div className='flex items-center py-10 justify-center min-h-[calc(100vh-265px)] '>
        <Helmet>
@@ -73,7 +83,7 @@ const {user} = UseAuth()
         </div>
       
         <div className="form-control mt-6 ">
-          <button   className="btn btn-primary">Submit</button>
+          <button    className="btn btn-primary">Submit</button>
         </div>
       </form>
     <div className="modal-action">

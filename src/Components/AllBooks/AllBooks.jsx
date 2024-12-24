@@ -6,15 +6,12 @@ import { data, Link, useParams } from 'react-router-dom';
 
 
 export default function AllBooks() {
+  const [view, setView] = useState("card")
   const { category } = useParams();
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    //   fetch(`http://localhost:5000/book-categories?category=${category}`)
-    //       .then((response) => response.json())
-    //       .then((data) => setBooks(data))
-    //       .catch((error) => console.error('Error fetching books:', error));
-
+   
           axios.get(`http://localhost:5000/book-categories?category=${category}`,{
             withCredentials:true
           })
@@ -27,28 +24,63 @@ export default function AllBooks() {
             <title>All-Books</title>
         </Helmet>
              <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">All Books</h1>
-             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                 {books.map((book) => (
-                     <div key={book._id} className="bg-white shadow-md rounded-lg p-4">
-                         <img src={book.image} alt={book.name} className="w-full h-40 object-cover rounded" />
-                         <h2 className="text-lg font-semibold mt-2">{book.name}</h2>
-                         <p className="text-gray-500">Author Name:{book.author_name}</p>
-                         <p className="text-sm text-gray-400">Category: {book.category}</p>
-                         {/* <p className="text-sm text-gray-400">Quantity: {book.quantity}</p> */}
-                         <p className="text-sm text-gray-400">Rating: {book.rating}</p>
-                         {/* <ReactStars
-                             count={5}
-                             value={book.rating}
-                             size={24}
-                             activeColor="#ffd700"
-                             edit={false}
-                         /> */}
-                         <Link to={`/update/${book._id}`}><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                             Update
-                         </button></Link>
-                     </div>
-                 ))}
-             </div>
+            <div className='my-10'>
+            <select value={view} onChange={(e)=>setView(e.target.value)}>
+              <option value="card"> Card View</option>
+              <option value="table"> Table View</option>
+             </select>
+            </div>
+
+             {
+              view === "card"?(
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {books.map((book) => (
+                    <div key={book._id} className="bg-white shadow-md rounded-lg p-4">
+                        <img src={book.image} alt={book.name} className="w-full h-40 object-cover rounded" />
+                        <h2 className="text-lg font-semibold mt-2">{book.name}</h2>
+                        <p className="text-gray-500">Author Name:{book.author_name}</p>
+                        <p className="text-sm text-gray-400">Category: {book.category}</p>
+                        {/* <p className="text-sm text-gray-400">Quantity: {book.quantity}</p> */}
+                        <p className="text-sm text-gray-400">Rating: {book.rating}</p>
+                        {/* <ReactStars
+                            count={5}
+                            value={book.rating}
+                            size={24}
+                            activeColor="#ffd700"
+                            edit={false}
+                        /> */}
+                        <Link to={`/update/${book._id}`}><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                            Update
+                        </button></Link>
+                    </div>
+                ))}
+            </div>
+              ):(
+                <table className="table-auto w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-200">
+                    <th className="border border-gray-300 p-2">Image url</th>
+                    <th className="border border-gray-300 p-2">Book Name</th>
+                    <th className="border border-gray-300 p-2">Author Name</th>
+                    <th className="border border-gray-300 p-2">Category</th>
+                    <th className="border border-gray-300 p-2">Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {books.map((book) => (
+                    <tr key={book.id} className="hover:bg-gray-100">
+                      <td className="border border-gray-300 p-2">{book.image}</td>
+                      <td className="border border-gray-300 p-2">{book.name}</td>
+                      <td className="border border-gray-300 p-2">{book.author_name}</td>
+                      <td className="border border-gray-300 p-2">{book.category}</td>
+                      <td className="border border-gray-300 p-2">{book.rating}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              )
+             }
+           
          </div>
   )
 }
