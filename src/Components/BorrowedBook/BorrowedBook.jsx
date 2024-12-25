@@ -19,7 +19,7 @@ export default function BorrowedBook() {
     <div className='grid justify-center  gap-6 pt-10 w-10/12 mx-auto xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-20'>
        
      {
-        borrowed.map(borrow=><BorrowCard key={borrow._id} borrow={borrow}></BorrowCard>)
+        borrowed.map(borrow=><BorrowCard key={borrow._id} borrowed={borrowed} borrow={borrow}></BorrowCard>)
      }
     </div>
     </div>
