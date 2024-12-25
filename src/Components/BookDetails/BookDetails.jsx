@@ -21,11 +21,11 @@ const {user} = UseAuth()
         const bookName = details.name
        form.reset()
         const result ={name,email,borrowDate,returnDate,image,category,bookName}
-       axios.post("http://localhost:5000/borrowed",result)
+       axios.post("https://assignment-11-server-two-brown.vercel.app/borrowed",result)
        .then((res)=>{
         console.log(res.data)
        })
-       axios.patch(`http://localhost:5000/book-details/${details._id}`)
+       axios.patch(`https://assignment-11-server-two-brown.vercel.app/book-details/${details._id}`)
        .then((res)=>{
         console.log(res.data)
        

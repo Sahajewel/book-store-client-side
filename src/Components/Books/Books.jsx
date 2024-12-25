@@ -8,7 +8,7 @@ const Books = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/book-categories?category=${category}`)
+        fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`)
             .then((response) => response.json())
             .then((data) => setBooks(data))
             .catch((error) => console.error('Error fetching books:', error));

@@ -49,17 +49,17 @@ export const router = createBrowserRouter([
         {
           path: "/update/:id",
           element:<UpdateForm></UpdateForm>,
-          loader: ({params})=>fetch(`http://localhost:5000/book-details/${params.id}`)
+          loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
         },
         {
           path: "/category",
           element: <CategoryCard></CategoryCard>,
-          // loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.ca}`)
+          // loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.ca}`)
         },
         {
             path: "/book-details/:id",
             element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5000/book-details/${params.id}`)
+            loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
         },
         {
           path: "/all-books",
@@ -72,13 +72,13 @@ export const router = createBrowserRouter([
         // {
         //     path:"/new-books/:id",
         //     element: <NewBooks></NewBooks>,
-        //     loader: ({params})=>fetch(`http://localhost:5000/books/${params.id}`)
+        //     loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/books/${params.id}`)
 
         // },
         // {
         //     path: "/categories/:category",
         //     element: <Books></Books>,
-        //     loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.category}`)
+        //     loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.category}`)
         // },
         // {
         //     path: "/new",
@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
         // {
         //     path: "/category/:id",
         //     element: <OldCategory></OldCategory>,
-        //     loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.id}`)
+        //     loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.id}`)
         // },
       {
           path: "/add-book",

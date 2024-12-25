@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 export default function ContactUs() {
     
   return (
-    <div className='bg-gray-700 flex flex-col justify-center items-center min-h-[calc(100vh-280px)] text-white'>
+    <div className='bg-gray-700 flex flex-col justify-center items-center min-h-[calc(100vh-280px)] py-10 text-white'>
           <Helmet>
             <title>Contact Us</title>
         </Helmet>
