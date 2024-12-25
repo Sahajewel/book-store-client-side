@@ -7,8 +7,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register"
 
 import CategoryCard from "../Components/CategoryCard/CategoryCard";
-import Books from "../Components/Books/Books";
-import CategoryPage from "../Components/Categories/Categories";
+// import Books from "../Components/Books/Books";
+// import CategoryPage from "../Components/Categories/Categories";
 import BookDetails from "../Components/BookDetails/BookDetails";
 import PrivateRoute from "./PrivateRoute";
 import AllBooks from "../Components/AllBooks/AllBooks";
@@ -17,6 +17,12 @@ import AddBook from "../Components/AddBook/AddBook";
 import BorrowedBook from "../Components/BorrowedBook/BorrowedBook";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Books from "../Components/Books/Books";
+// import NewCategoryCard from "../Components/NewCategory/NewCategoryCard";
+// import OldCategory from "../Components/NewCategory/OldCategory";
+// import NewBooks from "../Components/NewBooks/NewBooks";
+// import OldCategory from "../Components/NewCategory/OldCategory";
+// import NewCategory from "../Components/NewCategory/NewCategory";
 
 // import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
@@ -32,9 +38,14 @@ export const router = createBrowserRouter([
        
         {
           path:"/books",
-          element: <Books></Books>,
+          element: <Books></Books>
          
         },
+        // {
+        //   path:"/newCategory",
+        //   element: <NewCategory></NewCategory>,
+         
+        // },
         {
           path: "/update/:id",
           element:<UpdateForm></UpdateForm>,
@@ -58,11 +69,26 @@ export const router = createBrowserRouter([
             path:"/login",
             element: <Login></Login>
         },
-        {
-            path: "/categories/:category",
-            element: <Books></Books>,
-            loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.category}`)
-        },
+        // {
+        //     path:"/new-books/:id",
+        //     element: <NewBooks></NewBooks>,
+        //     loader: ({params})=>fetch(`http://localhost:5000/books/${params.id}`)
+
+        // },
+        // {
+        //     path: "/categories/:category",
+        //     element: <Books></Books>,
+        //     loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.category}`)
+        // },
+        // {
+        //     path: "/new",
+        //     element: <NewCategoryCard></NewCategoryCard>
+        // },
+        // {
+        //     path: "/category/:id",
+        //     element: <OldCategory></OldCategory>,
+        //     loader:({params})=>fetch(`http://localhost:5000/book-categories/${params.id}`)
+        // },
       {
           path: "/add-book",
           element: <PrivateRoute><AddBook></AddBook></PrivateRoute>

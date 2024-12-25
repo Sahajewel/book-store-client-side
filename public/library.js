@@ -1,8 +1,124 @@
 //  [
   
-//   {id: 1, image: "https://i.ibb.co/s6FTSS0/71-B7x-KT1-PIL-SY466.jpg", name: "Shanchayita", "author_name": "Rabindranath Tagore", "category": "bangla_literature_poem", "quantity": 10, "rating": 4.9 },
-//   {id: 2, image: "https://i.ibb.co/svFNw40/61jq-DKl-HLL-AC-UF1000-1000-QL80.jpg", name: "Nakshi Kathar Math", "author_name": "Jasimuddin", "category": "bangla_literature_poem", "quantity": 8, "rating": 4.7 },
-//   {id: 3, image: "https://i.ibb.co/Kw77D2y/gitanjali-original-imafe3gzf6sjtmsf.jpg", name: "Gitanjali", "author_name": "Rabindranath Tagore", "category": "bangla_literature_poem", "quantity": 12, "rating": 4.8 },
+//   {"id": "bangla",
+//     "title":"Bangla Literature",
+//     "content":[
+//     {
+//         "image": "https://i.ibb.co/s6FTSS0/71-B7x-KT1-PIL-SY466.jpg",
+//         "name": "Shanchayita",
+//         "author_name": "Rabindranath Tagore",
+//         "category": "bangla_literature_poem",
+//         "quantity": 10,
+//         "rating": 4.9
+//     },
+//     {
+//         "image": "https://i.ibb.co/svFNw40/61jq-DKl-HLL-AC-UF1000-1000-QL80.jpg",
+//         "name": "Nakshi Kathar Math",
+//         "author_name": "Jasimuddin",
+//         "category": "bangla_literature_poem",
+//         "quantity": 8,
+//         "rating": 4.7
+//     },
+//     {
+//         "image": "https://i.ibb.co/Kw77D2y/gitanjali-original-imafe3gzf6sjtmsf.jpg",
+//         "name": "Gitanjali",
+//         "author_name": "Rabindranath Tagore",
+//         "category": "bangla_literature_poem",
+//         "quantity": 12,
+//         "rating": 4.8
+//     },
+//   ]     
+// },
+//   {"id": "english",
+//     "title":"English Literature",
+//     "content":[
+//     {
+//         "image": "https://i.ibb.co/kJdmNZq/81c0i-KCXg-FL-UF1000-1000-QL80.jpg",
+//         "name": "Paradise Lost",
+//         "author_name": "John Milton",
+//         "category": "english_literature_poem",
+//         "quantity": 20,
+//         "rating": 4.8
+//     },
+//     {
+//         "image": "https://i.ibb.co/pddYDQS/images-q-tbn-ANd9-Gc-TMipij-ZY0ax0k-e-Qh-Aj-Td-Bd-J0-Hm-THhz-IFMv-Q-s.jpg",
+//         "name": "The Waste Land",
+//         "author_name": "T.S. Eliot",
+//         "category": "english",
+//         "quantity": 18,
+//         "rating": 4.5
+//     },
+//     {
+//         "image": "https://i.ibb.co/G2nT42f/91z-X8-E2c-LRL-UF1000-1000-QL80.jpg",
+//         "name": "Ode to a Nightingale",
+//         "author_name": "John Keats",
+//         "category": "english",
+//         "quantity": 15,
+//         "rating": 4.7
+//     },
+//   ]     
+// },
+//   {"id": "sports",
+//     "title":"Sports",
+//     "content":[
+//     {
+//         "image": "https://m.media-amazon.com/images/I/51A2FoIsz-L._SY466_.jpg",
+//         "name": "The Cricket Bible",
+//         "author_name": "Paul Kent",
+//         "category": "sports",
+//         "quantity": 17,
+//         "rating": 4.4
+//     },
+//     {
+//         "image": "https://i.ibb.co/6wsqLhy/images-q-tbn-ANd9-Gc-Ra-C3q5-R9mb-K6znb0hf9-tu-X-im-E4-Sdqe-ASMA-s.jpg",
+//         "name": "Cricket in the Mind",
+//         "author_name": "Mike Bearly",
+//         "category": "sports",
+//         "quantity": 14,
+//         "rating": 4.9
+//     },
+//     {
+//         "image": "https://i.ibb.co/hZLRP01/Art-Cricket3-1024x583.jpg",
+//         "name": "The Art Of Cricket",
+//         "author_name": "Don Badman",
+//         "category": "sports",
+//         "quantity": 12,
+//         "rating": 4.8
+//     },
+//   ]     
+// },
+//   {"id": "cooking",
+//     "title":"Cooking",
+//     "content":[
+//     {
+//         "image": "https://i.ibb.co/c3Z2dy3/E4-AVe-RQUc-AAk1tw.jpg",
+//         "name": "Banglladeshi Cruising",
+//         "author_name": "Siddika Kabir",
+//         "category": "cooking",
+//         "quantity": 16,
+//         "rating": 4.8
+//     },
+//     {
+//         "image": "https://i.ibb.co/48JkF3p/image-1024.gif",
+//         "name": "Best of Bangladeshi Cruisine",
+//         "author_name": "Niaz Jaman",
+//         "category": "cooking",
+//         "quantity": 19,
+//         "rating": 4.3
+//     },
+//     {
+//         "image": "https://i.ibb.co/gvBmMBs/img-2039.jpg",
+//         "name": "Bangladesher Ancholik Ranna",
+//         "author_name": "Ruma Arefin",
+//         "category": "cooking",
+//         "quantity": 22,
+//         "rating": 3.8
+//     },
+//   ]     
+// },
+//  ]
+ 
+ 
 //   {id: 4, image: "https://i.ibb.co/9cz0G6Q/Ruposhi-Bangla-By-Jibanananda-Das.jpg", name: "Ruposhi Bangla", "author_name": "Jibanananda Das", "category": "bangla_literature_poem", "quantity": 9, "rating": 4.6 },
 //   {id: 5, image: "https://i.ibb.co/pWgZd40/51-DXt-Ez5kp-L-AC-UF1000-1000-QL80.jpg", name: "Nirbachito Kobita", "author_name": "Kazi Nazrul Islam", "category": "bangla_literature_poem", "quantity": 7, "rating": 4.8 },
 

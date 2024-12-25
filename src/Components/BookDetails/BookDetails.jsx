@@ -25,11 +25,11 @@ const {user} = UseAuth()
        .then((res)=>{
         console.log(res.data)
        })
-      //  axios.patch(`http://localhost:5000/book-details/${details._id}`)
-      //  .then((res)=>{
-      //   console.log(res.data)
+       axios.patch(`http://localhost:5000/book-details/${details._id}`)
+       .then((res)=>{
+        console.log(res.data)
        
-      //  })
+       })
      
 
         
