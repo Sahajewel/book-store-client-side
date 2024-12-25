@@ -14,7 +14,7 @@ export default function BorrowCard({borrow,borrowed}) {
     .then((result)=>{
       console.log(result)
      
-      const remaining = borrowed.filter((delet)=>delet._id !==id)
+      const remaining = borrowed.filter((delet)=>delet._id !=id)
       setDeleted(remaining)
     })
       Swal.fire({

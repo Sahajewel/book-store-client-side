@@ -6,9 +6,7 @@ export default function BorrowedBook() {
     const [borrowed, setBorrowed] = useState([])
   
    useEffect(()=>{
-      axios.get("https://assignment-11-server-two-brown.vercel.app/borrowed-books",{
-        withCredentials: true
-      })
+      axios.get("https://assignment-11-server-two-brown.vercel.app/borrowed-books")
     .then((result)=>setBorrowed(result.data))
    },[])
 
