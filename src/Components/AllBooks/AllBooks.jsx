@@ -13,7 +13,7 @@ export default function AllBooks() {
 
   useEffect(() => {
    
-          axios.get(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`)
+          axios.get(`http://localhost:5000/book-categories`)
           .then((data)=>{
             setBooks(data.data)
             setFilterBooks(data.data)

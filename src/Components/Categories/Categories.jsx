@@ -5,7 +5,7 @@ import CategoryCard from '../CategoryCard/CategoryCard';
 const CategoryPage = () => {
   const [categories, setCategories] = useState([])
   useEffect(()=>{
-    fetch("https://assignment-11-server-two-brown.vercel.app/category")
+    fetch("http://localhost:5000/category")
     .then((res)=>res.json())
     .then((result)=>setCategories(result))
   },[])

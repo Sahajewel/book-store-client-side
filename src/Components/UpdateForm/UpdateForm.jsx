@@ -19,7 +19,7 @@ export default function UpdateForm() {
         form.reset()
         console.log(image,name,authorName,category,rating)
        const updateForm={image,name,authorName,category,rating}
-       fetch(`https://assignment-11-server-two-brown.vercel.app/update/${id}`,{
+       fetch(`http://localhost:5000/update/${id}`,{
         method:"PUT",
         headers: {
           "content-type": "application/json"

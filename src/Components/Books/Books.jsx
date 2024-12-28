@@ -5,21 +5,23 @@ import { Link, useParams } from 'react-router-dom';
 
 const Books = () => {
     const { category } = useParams();
+    console.log(category)
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`)
+        fetch(`http://localhost:5000/book-categories?category=${category}`)
             .then((response) => response.json())
             .then((data) => setBooks(data))
             .catch((error) => console.error('Error fetching books:', error));
     }, [category]);
+
 
     return (
         <div className="container mx-auto p-4">
               <Helmet>
             <title>Home | all-categories</title>
         </Helmet>
-            <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white"> Books</h1>
+            <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Categories Books</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {books.map((book) => (
                     <div key={book._id} className="bg-white shadow-md rounded-lg p-4">

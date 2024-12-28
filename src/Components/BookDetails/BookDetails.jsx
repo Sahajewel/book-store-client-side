@@ -3,6 +3,7 @@ import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom'
 import UseAuth from '../UseAuth/UseAuth'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
+import Swal from 'sweetalert2'
 
 export default function BookDetails() {
 const navigate= useNavigate()
@@ -19,17 +20,26 @@ const {user} = UseAuth()
         const image =details.image
         const category =details.category
         const bookName = details.name
+        const borrowId = details._id
        form.reset()
-        const result ={name,email,borrowDate,returnDate,image,category,bookName}
-       axios.post("https://assignment-11-server-two-brown.vercel.app/borrowed",result)
+        const result ={name,email,borrowDate,returnDate,image,category,bookName,borrowId}
+       axios.post("http://localhost:5000/borrowed",result)
        .then((res)=>{
         console.log(res.data)
+          Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Book Borrowed",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate("/borrowed-books")
        })
-       axios.patch(`https://assignment-11-server-two-brown.vercel.app/book-details/${details._id}`)
-       .then((res)=>{
-        console.log(res.data)
+      //  axios.patch(`http://localhost:5000/book-details/${details._id}`)
+      //  .then((res)=>{
+      //   console.log(res.data)
        
-       })
+      //  })
      
 
         
@@ -52,7 +62,7 @@ const {user} = UseAuth()
          <div >
         
 {/* Open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn w-full my-2 text-lg text-purple-500" onClick={()=>document.getElementById('my_modal_1').showModal()}>Borrow</button>
+<button disabled={details.quantity=== 0} className="btn w-full my-2 text-lg text-purple-500" onClick={()=>document.getElementById('my_modal_1').showModal()}>Borrow</button>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
   

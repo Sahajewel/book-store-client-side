@@ -1,4 +1,4 @@
-import { createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage"
 import Home from "../Pages/Home/Home";
@@ -26,91 +26,78 @@ import Books from "../Components/Books/Books";
 
 // import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-            path:"/",
-            element:<Home></Home>
-        },
-       
-        {
-          path:"/books",
-          element: <Books></Books>
-         
-        },
-        // {
-        //   path:"/newCategory",
-        //   element: <NewCategory></NewCategory>,
-         
-        // },
-        {
-          path: "/update/:id",
-          element:<UpdateForm></UpdateForm>,
-          loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
-        },
-        {
-          path: "/category",
-          element: <CategoryCard></CategoryCard>,
-          // loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.ca}`)
-        },
-        {
-            path: "/book-details/:id",
-            element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-            loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
-        },
-        {
-          path: "/all-books",
-          element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
-        },
-        {
-            path:"/login",
-            element: <Login></Login>
-        },
-        // {
-        //     path:"/new-books/:id",
-        //     element: <NewBooks></NewBooks>,
-        //     loader: ({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/books/${params.id}`)
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
 
-        // },
-        // {
-        //     path: "/categories/:category",
-        //     element: <Books></Books>,
-        //     loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.category}`)
-        // },
-        // {
-        //     path: "/new",
-        //     element: <NewCategoryCard></NewCategoryCard>
-        // },
-        // {
-        //     path: "/category/:id",
-        //     element: <OldCategory></OldCategory>,
-        //     loader:({params})=>fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories/${params.id}`)
-        // },
       {
-          path: "/add-book",
-          element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
+        path: "/books",
+        element: <Books></Books>,
+
+
       },
       {
-          path: "/borrowed-books",
-          element: <PrivateRoute><BorrowedBook></BorrowedBook></PrivateRoute>
+        path: "/books/:category",
+        element: <Books></Books>,
+
+
+      },
+   
+      {
+        path: "/update/:id",
+        element: <UpdateForm></UpdateForm>,
+        loader: ({ params }) => fetch(`http://localhost:5000/book-details/${params.id}`)
       },
       {
-          path:"/aboutUs",
-          element:<AboutUs></AboutUs>
+        path: "/category",
+        element: <CategoryCard></CategoryCard>,
+        
+      },
+      {
+        path: "/book-details/:id",
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/book-details/${params.id}`)
+      },
+      {
+        path: "/all-books",
+        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+     
+     
+     
+     
+      {
+        path: "/add-book",
+        element: <PrivateRoute><AddBook></AddBook></PrivateRoute>
+      },
+      {
+        path: "/borrowed-books",
+        element: <PrivateRoute><BorrowedBook></BorrowedBook></PrivateRoute>
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>
       },
       {
         path: "/contactUs",
-        element:<ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>
       },
 
-        {
-            path:"/register",
-            element: <Register></Register>
-        }
-      ]
-    },
-  ]);
+      {
+        path: "/register",
+        element: <Register></Register>
+      }
+    ]
+  },
+]);
 

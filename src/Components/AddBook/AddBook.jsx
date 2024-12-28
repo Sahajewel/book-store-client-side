@@ -2,14 +2,16 @@ import React from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddBook() {
+  const navigate = useNavigate()
     const handleAddBook=(e)=>{
         e.preventDefault();
         const formData =new FormData(e.target)
         const data = Object.fromEntries(formData.entries());
         e.target.reset()
-      axios.post("https://assignment-11-server-two-brown.vercel.app/add-book",data)
+      axios.post("http://localhost:5000/add-book",data)
       .then((result)=>{
         console.log(result.data)
         Swal.fire({
@@ -19,6 +21,7 @@ export default function AddBook() {
             showConfirmButton: false,
             timer: 1500
           });
+          navigate("/all-books")
       })
        
        

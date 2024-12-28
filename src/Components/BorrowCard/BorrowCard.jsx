@@ -7,7 +7,7 @@ export default function BorrowCard({borrow,borrowed}) {
   const [deleted, setDeleted] = useState([])
   const handleDelete=(id)=>{
  
-    fetch(`https://assignment-11-server-two-brown.vercel.app/borrowed-books/${id}`,{
+    fetch(`http://localhost:5000/borrowed-books/${id}`,{
       method: "DELETE"
     })
     .then((res)=>res.json())

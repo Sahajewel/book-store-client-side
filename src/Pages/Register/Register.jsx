@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 export default function Register() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -39,15 +40,13 @@ export default function Register() {
         creatUser(email,password)
         .then((result)=>{
             console.log(result)
-            toast.success("Succefully create a account",{
-                position:"top-right",
-                duration: 3000,
-                style: {
-                    border: '1px sol"id" #713200',
-                    padding: '16px',
-                    color: '#713200',
-                  },
-            })
+             Swal.fire({
+                       position: "top-end",
+                       icon: "success",
+                       title: "Successfully Signup",
+                       showConfirmButton: false,
+                       timer: 1500
+                     });
             navigate(location?.state? location.state: "/")
             handleUpdateUser(name, photo)
             .then((result)=>{
@@ -68,16 +67,13 @@ export default function Register() {
         .then((result)=>{
             console.log(result.user)
            
-            toast.success("Succefully registered by google",{
-                position:"top-right",
-                duration: 3000,
-                style: {
-                    border: '1px sol"id" #713200',
-                    padding: '16px',
-                    color: '#713200',
-                  },
-                  
-            })
+            Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Successfuly Sign up by google",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
             navigate(location?.state? location.state: "/")
         })
         .catch((err)=>console.log(err))

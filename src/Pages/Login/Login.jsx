@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import {  toast, ToastContainer } from "react-toastify";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -21,6 +22,13 @@ export default function Login() {
         signInUser(email, password)
         .then((result)=>{
             console.log(result.user)
+              Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Successfully Login",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
             navigate(location?.state?location.state:"/")
         })
         .catch((err)=>{
@@ -32,16 +40,13 @@ export default function Login() {
         .then((result)=>{
             console.log(result.user)
            
-            toast.success("Succefully registered by google",{
-                position:"top-right",
-                duration: 3000,
-                style: {
-                    border: '1px solid #713200',
-                    padding: '16px',
-                    color: '#713200',
-                  },
-                  
-            })
+             Swal.fire({
+                       position: "top-end",
+                       icon: "success",
+                       title: "Successfully Login by gmail",
+                       showConfirmButton: false,
+                       timer: 1500
+                     });
             navigate(location?.state? location.state: "/")
         })
         .catch((err)=>console.log(err))
