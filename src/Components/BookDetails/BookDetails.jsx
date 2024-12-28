@@ -23,7 +23,7 @@ const {user} = UseAuth()
         const borrowId = details._id
        form.reset()
         const result ={name,email,borrowDate,returnDate,image,category,bookName,borrowId}
-       axios.post("http://localhost:5000/borrowed",result)
+       axios.post("https://assignment-11-server-two-brown.vercel.app/borrowed",result)
        .then((res)=>{
         console.log(res.data)
           Swal.fire({
@@ -35,18 +35,22 @@ const {user} = UseAuth()
                   });
                   navigate("/borrowed-books")
        })
-      //  axios.patch(`http://localhost:5000/book-details/${details._id}`)
-      //  .then((res)=>{
-      //   console.log(res.data)
-       
-      //  })
+       .catch((err)=>{
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Already Borrowed",
+          showConfirmButton: false,
+          timer: 1500
+        });
+       })
+     
+      }
+     
      
 
         
-   }
-  //  const handleBorrow =(id)=>{
-  //   return details.quantity - 1
-  // }
+  
   return (
     <div className='flex items-center py-10 justify-center min-h-[calc(100vh-265px)] '>
        <Helmet>

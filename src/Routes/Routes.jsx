@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateForm></UpdateForm>,
-        loader: ({ params }) => fetch(`http://localhost:5000/book-details/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
       },
       {
         path: "/category",
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
       {
         path: "/book-details/:id",
         element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/book-details/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-two-brown.vercel.app/book-details/${params.id}`)
       },
       {
         path: "/all-books",

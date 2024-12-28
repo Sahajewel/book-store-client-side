@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Helmet } from "react-helmet";
 import Swal from 'sweetalert2';
-export default function BorrowCard({borrow,borrowed}) {
+export default function BorrowCard({borrow,borrowed,setBorrowed}) {
   console.log(borrow)
-  const [deleted, setDeleted] = useState([])
+
   const handleDelete=(id)=>{
  
-    fetch(`http://localhost:5000/borrowed-books/${id}`,{
+    fetch(`https://assignment-11-server-two-brown.vercel.app/borrowed-books/${id}`,{
       method: "DELETE"
     })
     .then((res)=>res.json())
@@ -15,7 +15,8 @@ export default function BorrowCard({borrow,borrowed}) {
       console.log(result)
      
       const remaining = borrowed.filter((delet)=>delet._id !=id)
-      setDeleted(remaining)
+      setBorrowed(remaining)
+      console.log(deleted)
     })
       Swal.fire({
                 position: "top-end",

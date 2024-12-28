@@ -9,7 +9,7 @@ const NewCategory = () => {
 const navigate = useNavigate()
   // Fetch categories from the server
   useEffect(() => {
-   axios.get("http://localhost:5000/book-categories")
+   axios.get("https://assignment-11-server-two-brown.vercel.app/book-categories")
    .then((res)=>setCategories(res.data))
         // setCategories(data);
    

@@ -8,7 +8,7 @@ export default function AboutUs() {
             <title>About Us</title>
         </Helmet>
      <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">About Us</h1>
-<p className='max-w-[700px] mx-auto text-white text-lg '>Welcome to Book Library, your one-stop destination for books that inspire, educate, and entertain.
+<p className='max-w-[700px] px-10 mx-auto text-white text-lg  pb-20 '>Welcome to Book Library, your one-stop destination for books that inspire, educate, and entertain.
 
 At Book Library, we believe that every book has the power to transform lives. Whether you're an avid reader, a curious learner, or someone looking for a thoughtful gift, our curated collection of Bangla Literature, English Literature, Sports, and Cooking books offers something for everyone.
 

@@ -9,7 +9,8 @@ export default function ContactUs() {
             <title>Contact Us</title>
         </Helmet>
         <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Contact Us</h1>
-    <p className='text-lg mb-2'>We'd love to hear from you! Whether you have questions, feedback, or need assistance, our team is here to help.</p>
+        <div className='mx-10 text-center'>
+    <p className='text-lg mb-2 '>We'd love to hear from you! Whether you have questions, feedback, or need assistance, our team is here to help.</p>
 
             <p className='mb-2 text-lg'>Email Us:
                 For inquiries or support:
@@ -31,6 +32,7 @@ export default function ContactUs() {
             <p className='text-lg'>
                      Our team is always ready to assist you, and we strive to respond to all inquiries within 24 hours.
             </p>
+            </div>
     </div>
   )
 }
