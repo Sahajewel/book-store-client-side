@@ -1,6 +1,6 @@
 # Book Library Website #
 
-📖 Overview
+## 📖 Overview ##
 
 This is a Book Library Website built with React, allowing users to browse, search, and borrow books. It includes authentication, book management, and user-friendly UI interactions.
 
@@ -49,31 +49,7 @@ UI Enhancements: SweetAlert2, React Toastify, React Simple Typewriter
     "sweetalert2": "^11.15.3"
 }
 
-🔧 Installation
 
-Clone the repository:
-
-git clone https://github.com/your-username/book-library.git
-
-Navigate to the project directory:
-
-cd book-library
-
-Install dependencies:
-
-
-
-(Replace your-secure-token with a secure value.)
-
-Start the development server:
-
-npm run dev
-
-🚀 Deployment
-
-To deploy the project:
-
-npm run build
 
 Then, host it on Vercel, Netlify, or Firebase Hosting.
 
