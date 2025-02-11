@@ -27,11 +27,11 @@ const showAvailableBooks=()=>{
   setFilterBooks(availableBooks)
 }
   return (
-   <div className="container mx-auto p-4">
+   <div className="container mx-auto pt-20">
      <Helmet>
             <title>All-Books</title>
         </Helmet>
-             <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">All Books</h1>
+             <h1 className="text-4xl font-bold mb-4 text-center py-20 text-white">All Books</h1>
             <button className='btn text-lg' onClick={showAvailableBooks}>Show Available Books</button>
             <div className='my-10'>
             <select className='p-2' value={view} onChange={(e)=>setView(e.target.value)}>
