@@ -68,12 +68,12 @@ const BookStore = () => {
   return (
     <div>
       {/* Book Categories Section */}
-      <section className="py-32 bg-gray-100 py-">
+      <section className="py-32 bg-gray-500 py-">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-8">Book Categories</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-8">Book Categories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {books.map((book) => (
-              <div key={book.id} className="bg-white p-6 rounded-lg shadow-lg">
+              <div key={book.id} className="bg-gray-400 p-6 rounded-lg shadow-lg">
                 <img
                   src={book.image}
                   alt={book.title}
@@ -82,9 +82,9 @@ const BookStore = () => {
                 <h3 className="text-xl font-bold text-gray-800">{book.title}</h3>
                 <p className="text-gray-600 text-sm mb-2">{book.author}</p>
                 <p className="text-gray-800 mb-4">{book.description}</p>
-                <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+                {/* <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                   Add to Cart
-                </button>
+                </button> */}
               </div>
             ))}
           </div>
@@ -92,9 +92,9 @@ const BookStore = () => {
       </section>
 
       {/* Featured Books Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-400">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-8">Featured Books</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Featured Books</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {featuredBooks.map((book) => (
               <div
@@ -109,9 +109,9 @@ const BookStore = () => {
                 <h3 className="text-2xl font-bold text-white">{book.title}</h3>
                 <p className="text-white text-sm mb-2">{book.author}</p>
                 <p className="text-white mb-4">{book.description}</p>
-                <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                {/* <button className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition duration-300">
                   Buy Now
-                </button>
+                </button> */}
               </div>
             ))}
           </div>

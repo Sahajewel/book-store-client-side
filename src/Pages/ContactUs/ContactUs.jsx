@@ -1,38 +1,69 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import { useState } from "react";
 
-export default function ContactUs() {
-    
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
-    <div className='bg-gray-700 flex flex-col justify-center items-center min-h-[calc(100vh-280px)] py-10 text-white'>
-          <Helmet>
-            <title>Contact Us</title>
-        </Helmet>
-        <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Contact Us</h1>
-        <div className='mx-10 text-center'>
-    <p className='text-lg mb-2 '>We'd love to hear from you! Whether you have questions, feedback, or need assistance, our team is here to help.</p>
+    <section className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg pt-10">
+      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Contact Us</h2>
 
-            <p className='mb-2 text-lg'>Email Us:
-                For inquiries or support:
-                📧 sahajewel@gmail.com
-            </p>
-            <p>
-            Call Us:
-                For immediate assistance:
-                📞 080-5052-6878
+      <div className="text-center mb-6">
+        <p className="text-gray-600">📍 saitama, Tokyo, Japan</p>
+        <p className="text-gray-600">📞 +81 80 5052 6822</p>
+        <p className="text-gray-600">✉️ info@sahajewel.com.com</p>
+      </div>
 
-            </p>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+        />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+        ></textarea>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </section>
+  );
+};
 
-            <p className='mb-2 text-lg'>Visit Us:
-            If you'd like to visit us in person, our store is located at:
-            📍 Saitama,Tokyo, Japan
-            </p>
-
-
-            <p className='text-lg'>
-                     Our team is always ready to assist you, and we strive to respond to all inquiries within 24 hours.
-            </p>
-            </div>
-    </div>
-  )
-}
+export default ContactUs;

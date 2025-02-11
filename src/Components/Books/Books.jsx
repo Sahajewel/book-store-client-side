@@ -10,13 +10,13 @@ const Books = () => {
     const [books, setBooks] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`)
+    //     fetch(`http://localhost:5000/book-categories?category=${category}`)
     //         .then((response) => response.json())
     //         .then((data) => setBooks(data))
     //         .catch((error) => console.error('Error fetching books:', error));
     // }, [category]);
 useEffect(()=>{
-    axios.get(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`,{
+    axios.get(`http://localhost:5000/book-categories?category=${category}`,{
         withCredentials:true
     })
     .then((response)=>setBooks(response.data))

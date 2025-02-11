@@ -5,7 +5,7 @@ export default function CategoryCard({category}) {
     const navigate = useNavigate()
     console.log(category)
   return (
-    <div className='bg-zinc-500 text-center text-white p-5'>
+    <div className='bg-stone-600 rounded-xl text-center text-white p-5'>
      <h1 className='text-xl font-bold '> {category.name}</h1>
       <div className=''>
         {category.subcategories.map((sub,idx)=><div className='hover:underline pb-2 pt-2' key={idx}><Link to={`/books/${category.name.split(" ").join("_").toLowerCase()}_${sub.split(" ").join("_").toLowerCase()}`}>{sub}</Link></div>)}

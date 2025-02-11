@@ -23,7 +23,7 @@ const {user} = UseAuth()
         const borrowId = details._id
        form.reset()
         const result ={name,email,borrowDate,returnDate,image,category,bookName,borrowId}
-       axios.post("https://assignment-11-server-two-brown.vercel.app/borrowed",result)
+       axios.post("http://localhost:5000/borrowed",result)
        .then((res)=>{
         console.log(res.data)
           Swal.fire({
