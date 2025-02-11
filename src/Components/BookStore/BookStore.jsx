@@ -79,9 +79,9 @@ const BookStore = () => {
                   alt={book.title}
                   className="w-full h-48 object-cover rounded-t-lg mb-4"
                 />
-                <h3 className="text-xl font-bold text-gray-800">{book.title}</h3>
-                <p className="text-gray-600 text-sm mb-2">{book.author}</p>
-                <p className="text-gray-800 mb-4">{book.description}</p>
+                <h3 className="text-xl font-bold text-white">{book.title}</h3>
+                <p className="text-white text-sm mb-2">{book.author}</p>
+                <p className="text-white mb-4">{book.description}</p>
                 {/* <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                   Add to Cart
                 </button> */}

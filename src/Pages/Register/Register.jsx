@@ -80,7 +80,7 @@ export default function Register() {
     }
   return (
 
-     <div className="md:flex items-center justify-center flex-row-reverse text-black">
+     <div className="md:flex w-11/12 mx-auto items-center justify-center flex-row-reverse text-black">
        <Helmet>
             <title>Register</title>
         </Helmet>
@@ -94,13 +94,13 @@ export default function Register() {
         </div>
         <div className="form-control">
         <label className="label">
-          <span className="label-text">Name</span>
+          <span className="label-text text-white">Name</span>
         </label>
         <input name="name" type="text" placeholder="name" className="input input-bordered" required />
       </div>
       <div className="form-control">
         <label className="label">
-          <span className="label-text">Photo </span>
+          <span className="label-text text-white">Photo </span>
         </label>
         <input name="photo" type="text" placeholder="Photo url" className="input input-bordered" required />
       </div>
@@ -120,12 +120,12 @@ export default function Register() {
         <div className="form-control mt-6">
           <button className="border border-purple-500 bg-black p-4 text-white text-lg">Register</button>
         </div>
-        <div className="divider">OR</div>
+        <div className="divider text-white">OR</div>
         <div className="flex justify-center border p-4 bg-black rounded-lg text-white  border-purple-500">
             <button  onClick={handleGoogle}>Sign In With Google</button>
         </div>
         <div>
-            <p className="text-center">Do you have an account already? please <Link className="text-red-400" to="/login">Login</Link></p>
+            <p className="text-center text-white">Do you have an account already? please <Link className="text-red-400" to="/login">Login</Link></p>
         </div>
       </form>
     </div>

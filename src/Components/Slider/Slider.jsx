@@ -16,7 +16,7 @@ export default function Slider() {
   
   <div className="hero-content text-neutral-content text-center bg-gray-500">
     <div className="max-w-md">
-   <div className='text-3xl mb-5 text-stone-400 font-bold pt-3'>
+   <div className='text-3xl mb-5 text-red-800 font-bold pt-3'>
    <Typewriter
         words={["Hello, Learners! Welcome to our Website!"]}
         loop={0} // Set to 0 for infinite loops
@@ -46,7 +46,7 @@ export default function Slider() {
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content text-center bg-gray-500">
     <div className="max-w-md">
-    <div className='text-3xl mb-5 text-green-800 font-bold pt-3'>
+    <div className='text-3xl mb-5 text-red-800 font-bold pt-3'>
    <Typewriter
         words={["Hello, Learners! Welcome to our Website!"]}
         loop={0} // Set to 0 for infinite loops

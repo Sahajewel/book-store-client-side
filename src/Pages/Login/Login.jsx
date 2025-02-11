@@ -52,7 +52,7 @@ export default function Login() {
         .catch((err)=>console.log(err))
     }
   return (
-    <div className="md:flex items-center justify-center flex-row-reverse ">
+    <div className="md:flex w-11/12 mx-auto items-center justify-center flex-row-reverse ">
        <Helmet>
             <title>Login</title>
         </Helmet>
@@ -80,12 +80,12 @@ export default function Login() {
         <div className="form-control mt-6">
           <button className="p-4 rounded-lg bg-black text-white text-lg border border-purple-500">Login</button>
         </div>
-        <div className="divider">OR</div>
+        <div className="divider text-white">OR</div>
         <div className="flex justify-center border border-purple-500 p-4 bg-black rounded-lg  text-white">
             <button  onClick={handleGoogle}>Sign In With Google</button>
         </div>
         <div>
-            <p className="text-center">Don't you have an account? please <Link className="text-red-400" to="/register">Register</Link></p>
+            <p className="text-center text-white">Don't you have an account? please <Link className="text-red-400" to="/register">Register</Link></p>
         </div>
       </form>
     </div>
