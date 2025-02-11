@@ -44,14 +44,14 @@ const showAvailableBooks=()=>{
               view === "card"?(
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filterBooks.map((book) => (
-                    <div key={book._id} className="bg-white shadow-md rounded-lg p-4">
+                    <div key={book._id} className="bg-gray-500 shadow-md rounded-lg p-4">
                         <img src={book.image} alt={book.name} className="w-full h-40 object-cover rounded" />
-                        <h2 className="text-lg font-semibold mt-2">{book.name}</h2>
+                        <h2 className="text-lg font-semibold mt-2 text-white">{book.name}</h2>
                         <p className="text-gray-500">Author Name:{book.author_name}</p>
-                        <p className="text-sm text-gray-400">Category: {book.category}</p>
-                        <p className="text-sm text-gray-400">Quantity: {book.quantity}</p>
+                        <p className="text-sm text-white">Category: {book.category}</p>
+                        <p className="text-sm text-white">Quantity: {book.quantity}</p>
                         {/* <p className="text-sm text-gray-400">Quantity: {book.quantity}</p> */}
-                        <p className="text-sm text-gray-400">Rating: {book.rating}</p>
+                        <p className="text-sm text-white">Rating: {book.rating}</p>
                         {/* <ReactStars
                             count={5}
                             value={book.rating}
