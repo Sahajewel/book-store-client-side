@@ -52,66 +52,72 @@ export default function BookDetails() {
 
 
   return (
-    <div className='flex items-center py-10 justify-center min-h-[calc(100vh-265px)] '>
-      <Helmet>
-        <title>Book-Details</title>
-      </Helmet>
-      <div className='bg-gray-400 p-10 rounded-tr-[100px]'>
-        <img className='mx-auto w-60' src={details.image} alt="" />
-        <p className='text-xl text-white py-2'>Author: {details.name}</p>
-        <p className='text-xl text-white py-2'>Author: {details.author_name}</p>
-        <p className='text-xl text-white py-2'>Category: {details.category}</p>
-        <p className='text-xl text-white py-2'>Quantity: {details.quantity}</p>
-        <p className='text-xl text-white py-2'>Rating: {details.rating}</p>
-        <div >
+    <div className='pt-20'>
+       <Helmet>
+          <title>Book-Details</title>
+        </Helmet>
 
-          {/* Open the modal using document.getElementById('ID').showModal() method */}
-          <button disabled={details.quantity === 0} className="btn w-full my-2 text-lg text-gray-500" onClick={() => document.getElementById('my_modal_1').showModal()}>Borrow</button>
-          <dialog id="my_modal_1" className="modal">
-            <div className="modal-box">
+      <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Borrow Book</h1>
+      <div className='flex items-center py-10 justify-center min-h-[calc(100vh-265px)] '>
+       
+        <div className='bg-gray-400 p-10 rounded-tr-[100px]'>
+          <img className='mx-auto w-60' src={details.image} alt="" />
+          <p className='text-xl text-white py-2'>Book Name: {details.name}</p>
+          <p className='text-xl text-white py-2'>Author: {details.author_name}</p>
+          <p className='text-xl text-white py-2'>Category: {details.category}</p>
+          <p className='text-xl text-white py-2'>Quantity: {details.quantity}</p>
+          <p className='text-xl text-white py-2'>Rating: {details.rating}</p>
+          <div >
 
-              <form onSubmit={handleSubmitForm} className="card-body">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Name</span>
-                  </label>
-                  <input name='name' defaultValue={user?.displayName} type="text" placeholder="name" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input name='email' defaultValue={user?.email} type="email" placeholder="email" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Borrow Date</span>
-                  </label>
-                  <input name='borrowDate' type="date" placeholder="Borrow Date" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Returning Date</span>
-                  </label>
-                  <input name='returnDate' type="date" placeholder="Returning Date" className="input input-bordered" required />
-                </div>
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button disabled={details.quantity === 0} className="btn w-full my-2 text-lg text-gray-500" onClick={() => document.getElementById('my_modal_1').showModal()}>Borrow</button>
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box">
 
-                <div className="form-control mt-6 ">
-                  <button className="btn bg-gray-600 text-white">Submit</button>
-                </div>
-              </form>
-              <div className="modal-action">
-                <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn">Close</button>
+                <form onSubmit={handleSubmitForm} className="card-body">
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Name</span>
+                    </label>
+                    <input name='name' defaultValue={user?.displayName} type="text" placeholder="name" className="input input-bordered" required />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
+                    </label>
+                    <input name='email' defaultValue={user?.email} type="email" placeholder="email" className="input input-bordered" required />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Borrow Date</span>
+                    </label>
+                    <input name='borrowDate' type="date" placeholder="Borrow Date" className="input input-bordered" required />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Returning Date</span>
+                    </label>
+                    <input name='returnDate' type="date" placeholder="Returning Date" className="input input-bordered" required />
+                  </div>
+
+                  <div className="form-control mt-6 ">
+                    <button className="btn bg-gray-600 text-white">Submit</button>
+                  </div>
                 </form>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
+                </div>
               </div>
-            </div>
-          </dialog>
+            </dialog>
 
+          </div>
         </div>
       </div>
     </div>
+
   )
 }
 

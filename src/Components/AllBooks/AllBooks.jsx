@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-// import ReactStars from 'react-rating-stars-component';
 import { data, Link, useParams } from 'react-router-dom';
 
 
@@ -13,8 +12,7 @@ export default function AllBooks() {
 
   useEffect(() => {
    
-          axios.get(`https://assignment-11-server-two-brown.vercel.app
-/book-categories`,{
+          axios.get(`https://assignment-11-server-two-brown.vercel.app/book-categories`,{
             withCredentials:true
           })
           .then((data)=>{
@@ -51,15 +49,7 @@ const showAvailableBooks=()=>{
                         <p className="text-white">Author Name:{book.author_name}</p>
                         <p className="text-sm text-white">Category: {book.category}</p>
                         <p className="text-sm text-white">Quantity: {book.quantity}</p>
-                        {/* <p className="text-sm text-gray-400">Quantity: {book.quantity}</p> */}
                         <p className="text-sm text-white">Rating: {book.rating}</p>
-                        {/* <ReactStars
-                            count={5}
-                            value={book.rating}
-                            size={24}
-                            activeColor="#ffd700"
-                            edit={false}
-                        /> */}
                         <Link to={`/update/${book._id}`}><button className="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-400">
                             Update
                         </button></Link>

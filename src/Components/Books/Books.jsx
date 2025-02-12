@@ -28,12 +28,12 @@ const handleSort = ()=>{
                 <title>Home | categories-book</title>
             </Helmet>
             <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Categories Books</h1>
-            <button className='bg-gray-600 mb-5 text-white p-4' onClick={handleSort}>Sort by rating {sortOrder === "asc" ? "asc" : "desc"}</button>
+            <button className='bg-gray-600 mb-5 text-white p-4' onClick={handleSort}>Sort  rating by {sortOrder === "asc" ? "asc" : "desc"}</button>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {books.map((book) => (
                     <div key={book._id} className="bg-gray-400 shadow-md rounded-lg p-4">
                         <img src={book.image} alt={book.name} className="w-full h-40 object-cover rounded" />
-                        <h2 className="text-lg text-white font-semibold mt-2">{book.name}</h2>
+                        <h2 className="text-lg text-white font-semibold mt-2">Book Name: {book.name}</h2>
                         <p className="text-white">Author Name:{book.author_name}</p>
                         <p className="text-sm text-white">Category: {book.category}</p>
                         <p className="text-sm text-white">Available: {book.quantity}</p>
