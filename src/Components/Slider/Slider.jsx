@@ -30,9 +30,6 @@ export default function Slider() {
    </div>
       <h1 className="mb-5 text-2xl font-bold">Discover Your Next Favorite Book</h1>
       <h2 className="mb-5 text-xl font-bold">Explore a vast collection of Bangla literature, English classics, sports thrillers, and mouthwatering cooking guides. Start your reading journey today!</h2>
-      <p className="mb-5">
-      Browse Our Collection
-      </p>
      
     </div>
   </div>
@@ -60,11 +57,6 @@ export default function Slider() {
    </div>
       <h1 className="mb-5 text-2xl font-bold">Where Every Story Begins</h1>
       <h2 className="mb-5 text-xl font-bold">Whether you're into gripping novels, inspiring sports stories, or delicious recipes, we have something for everyone. Dive into your next adventure now.</h2>
-      <p className="mb-5">
-      xplore Genres
-
-
-      </p>
     
     </div>
   </div>

@@ -8,27 +8,27 @@ const Books = () => {
     const { category } = useParams();
     console.log(category)
     const [books, setBooks] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(`https://assignment-11-server-two-brown.vercel.app
-// /book-categories?category=${category}`)
-//     //         .then((response) => response.json())
-//     //         .then((data) => setBooks(data))
-//     //         .catch((error) => console.error('Error fetching books:', error));
-//     // }, [category]);
-useEffect(()=>{
-    axios.get(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`,{
-        withCredentials:true
+    const [sortOrder, setSortOrder] = useState("asc");
+    useEffect(() => {
+        axios.get(`https://assignment-11-server-two-brown.vercel.app/book-categories?category=${category}`, {
+            withCredentials: true
+        })
+            .then((response) => setBooks(response.data))
+    }, [category])
+const handleSort = ()=>{
+    const sortBooks = [...books].sort((a,b)=>{
+        return sortOrder === "asc" ? a.rating - b.rating : b.rating - a.rating
     })
-    .then((response)=>setBooks(response.data))
-},[category])
-
+    setBooks(sortBooks);
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc")
+}
     return (
         <div className="container mx-auto pt-24">
-              <Helmet>
-            <title>Home | categories-book</title>
-        </Helmet>
+            <Helmet>
+                <title>Home | categories-book</title>
+            </Helmet>
             <h1 className="text-4xl font-bold mb-4 text-center py-10 text-white">Categories Books</h1>
+            <button className='bg-gray-600 mb-5 text-white p-4' onClick={handleSort}>Sort by rating {sortOrder === "asc" ? "asc" : "desc"}</button>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {books.map((book) => (
                     <div key={book._id} className="bg-gray-400 shadow-md rounded-lg p-4">

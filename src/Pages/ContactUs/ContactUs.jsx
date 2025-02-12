@@ -18,13 +18,13 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg pt-10">
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Contact Us</h2>
+    <section className="max-w-3xl mx-auto bg-gray-600 p-6 rounded-lg shadow-lg pt-36">
+      <h2 className="text-3xl font-semibold text-center text-white mb-6">Contact Us</h2>
 
       <div className="text-center mb-6">
-        <p className="text-gray-600">📍 saitama, Tokyo, Japan</p>
-        <p className="text-gray-600">📞 +81 80 5052 6822</p>
-        <p className="text-gray-600">✉️ info@sahajewel.com.com</p>
+        <p className="text-white">📍 saitama, Tokyo, Japan</p>
+        <p className="text-white">📞 +81 80 5052 6822</p>
+        <p className="text-white">✉️ info@sahajewel.com.com</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -57,7 +57,7 @@ const ContactUs = () => {
         ></textarea>
         <button
           type="submit"
-          className="w-full bg-gray-600 text-white p-3 rounded-lg hover:bg-gray-400 transition"
+          className="w-full bg-gray-400 text-white p-3 rounded-lg hover:bg-gray-500 transition"
         >
           Send Message
         </button>
