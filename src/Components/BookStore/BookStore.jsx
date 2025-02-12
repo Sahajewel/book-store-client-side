@@ -73,7 +73,7 @@ const BookStore = () => {
           <h2 className="text-3xl font-bold text-center text-white mb-8">Book Categories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {books.map((book) => (
-              <div key={book.id} className="bg-gray-400 p-6 rounded-lg shadow-lg">
+              <div key={book.id} className="bg-gray-600 p-6 rounded-lg shadow-lg">
                 <img
                   src={book.image}
                   alt={book.title}
@@ -99,7 +99,7 @@ const BookStore = () => {
             {featuredBooks.map((book) => (
               <div
                 key={book.id}
-                className="w-80 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 p-6 rounded-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out"
+                className="w-80 bg-gray-600 p-6 rounded-lg shadow-xl transform hover:scale-105 transition duration-300 ease-in-out"
               >
                 <img
                   src={book.image}

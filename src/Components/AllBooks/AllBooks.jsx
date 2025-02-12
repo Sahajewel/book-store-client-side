@@ -13,7 +13,8 @@ export default function AllBooks() {
 
   useEffect(() => {
    
-          axios.get(`http://localhost:5000/book-categories`,{
+          axios.get(`https://assignment-11-server-two-brown.vercel.app
+/book-categories`,{
             withCredentials:true
           })
           .then((data)=>{
@@ -47,7 +48,7 @@ const showAvailableBooks=()=>{
                     <div key={book._id} className="bg-gray-500 shadow-md rounded-lg p-4">
                         <img src={book.image} alt={book.name} className="w-full h-40 object-cover rounded" />
                         <h2 className="text-lg font-semibold mt-2 text-white">{book.name}</h2>
-                        <p className="text-gray-500">Author Name:{book.author_name}</p>
+                        <p className="text-white">Author Name:{book.author_name}</p>
                         <p className="text-sm text-white">Category: {book.category}</p>
                         <p className="text-sm text-white">Quantity: {book.quantity}</p>
                         {/* <p className="text-sm text-gray-400">Quantity: {book.quantity}</p> */}
@@ -59,7 +60,7 @@ const showAvailableBooks=()=>{
                             activeColor="#ffd700"
                             edit={false}
                         /> */}
-                        <Link to={`/update/${book._id}`}><button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                        <Link to={`/update/${book._id}`}><button className="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-400">
                             Update
                         </button></Link>
                     </div>

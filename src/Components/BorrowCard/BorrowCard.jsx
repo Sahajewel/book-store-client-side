@@ -7,7 +7,8 @@ export default function BorrowCard({borrow,borrowed,setBorrowed}) {
 
   const handleDelete=(id)=>{
  
-    fetch(`http://localhost:5000/borrowed-books/${id}`,{
+    fetch(`https://assignment-11-server-two-brown.vercel.app
+/borrowed-books/${id}`,{
       method: "DELETE"
     })
     .then((res)=>res.json())
@@ -28,7 +29,7 @@ export default function BorrowCard({borrow,borrowed,setBorrowed}) {
     
   }
   return (
-    <div className='text-white text-lg bg-zinc-700 p-10 text-center rounded-3xl'>
+    <div className='text-white text-lg bg-gray-500 p-10 text-center rounded-3xl'>
         <Helmet>
             <title>Borrowed-Books</title>
         </Helmet>

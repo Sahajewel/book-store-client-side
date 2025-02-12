@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="footer footer-center  text-base-content rounded p-10 bg-gradient-to-l via-slate-600 to-gray-600 from-slate-600">
+    <footer className="footer footer-center  text-base-content rounded p-10 bg-gray-600 from-slate-600">
 
       <nav className="grid grid-flow-col gap-4">
         <Link to="/aboutUs" className="link link-hover text-white">About us</Link>

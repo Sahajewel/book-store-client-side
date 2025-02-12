@@ -19,7 +19,8 @@ export default function UpdateForm() {
         form.reset()
         console.log(image,name,authorName,category,rating)
        const updateForm={image,name,authorName,category,rating}
-       fetch(`http://localhost:5000/update/${id}`,{
+       fetch(`https://assignment-11-server-two-brown.vercel.app
+/update/${id}`,{
         method:"PUT",
         headers: {
           "content-type": "application/json"
@@ -82,7 +83,7 @@ export default function UpdateForm() {
       
         <div className="form-control mt-6 ">
        {/* <Link onClick={()=>navigate("/all-books")}> <button type='submit'  className="btn btn-primary">Submit</button></Link> */}
-       <button type='submit'  className="btn btn-primary">Submit</button>
+       <button type='submit'  className="btn bg-gray-500 text-white">Submit</button>
         </div>
       </form>
     </div>

@@ -3,10 +3,14 @@ import { Link, NavLink } from 'react-router-dom'
 import UseAuth from '../UseAuth/UseAuth'
 
 import logo from "./logo.jpg"
+import ThemeToggle from '../DarkLightMode/DarkLightMode';
+
 export default function Navbar() {
   const { user, Logout } = UseAuth();
   const [scrolled, setScrolled] = useState(false);
+ 
   useEffect(() => {
+  
     const handleScrolled = () => {
       if (window.scrollY > 50) {
         setScrolled(true)
@@ -29,13 +33,18 @@ export default function Navbar() {
         console.log(err)
       })
   }
+ 
   const links = <>
     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/">Home</NavLink>
     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/all-books">All Books</NavLink>
-    <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/add-book">Add Book</NavLink>
+    {
+      user? <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/add-book">Add Book</NavLink> : ""
+    }
     {
       user ? <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/borrowed-books">Borrowed Books</NavLink> : ""
     }
+     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/aboutUs">About Us</NavLink>
+     <NavLink className="btn mr-3 xs:mb-5 lg:mb-0" to="/contactUs">Contact Us</NavLink>
 
 
   </>
@@ -71,19 +80,21 @@ export default function Navbar() {
             {links}
           </ul>
         </div>
+        
         <div className="navbar-end  ">
+        <ThemeToggle></ThemeToggle>
           {
             user && user ? <div className='flex justify-center items-center group relative'>
               <img className='w-16 rounded-full mr-4 ' src={user?.photoURL} alt="" />
               <div className='bg-gray-800 p-5 rounded-xl hidden absolute group-hover:block top-12 z-20'>
                 <p className='text-white mb-2 text-lg'>{user?.displayName}</p>
-                <button className='btn text-purple-500 text-lg' onClick={handleLogout}>Logout</button>
+                <button className='btn text-gray-500 text-lg' onClick={handleLogout}>Logout</button>
               </div>
             </div>
               :
               <div className='sm:flex sm:flex-col gap-4 md:flex-none md:flex-row md:gap-0'>
-                <Link className='mr-4 btn text-purple-500 text-lg' to="/login">Login</Link>
-                <Link className='text-purple-500 text-lg btn' to="/register">Register</Link>
+                <Link className='mr-4 btn text-gray-500 text-lg' to="/login">Login</Link>
+                <Link className='text-gray-500 text-lg btn' to="/register">Register</Link>
               </div>
           }
         </div>

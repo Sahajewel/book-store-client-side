@@ -28,9 +28,9 @@ export default function Newsletter() {
     };
 
     return (
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white mt-12 py-12 px-6 text-center rounded-xl shadow-lg w-full max-w-2xl mx-auto">
+        <div className="bg-gray-400 text-white mt-12 py-12 px-6 text-center rounded-xl shadow-lg w-full max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold mb-2">Subscribe to Our Newsletter</h2>
-            <p className="text-gray-300 mb-6">
+            <p className="text-white mb-6">
                 Get the latest updates and exclusive offers straight to your inbox.
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -43,7 +43,7 @@ export default function Newsletter() {
                 />
                 <button
                     type="submit"
-                    className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300"
+                    className="bg-gray-600 hover:bg-gray-500 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300"
                 >
                     Subscribe
                 </button>
